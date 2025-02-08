@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from "react-router-dom";
-//import kaboom from "kaboom";
-//import kaboom from "https://unpkg.com/kaboom@3000.1.17/dist/kaboom.mjs";
 import "./App.css";
 import Game from "./game.jsx"; // Ensure this file exists
 import CharacterSel from "./CharacterSel.jsx";
@@ -33,7 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
         <Route path="/character" element={<CharacterSel />} />
-        <Route path="/create" element={<CreateScene />} /> 
+        {/* <Route path="/create" element={<CreateScene />} />  */}
       </Routes>
     </div>
   );
