@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import "./CharacterSel.css";
-import Game from "./Game.jsx"; // Ensure this file exists
+import Game from "./game.jsx"; // Ensure this file exists
 import  Square  from "./assets/Square.png"; // Ensure this file exists
 
 function CharacterSel() {
