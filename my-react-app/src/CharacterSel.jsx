@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import "./CharacterSel.css";
-import Game from "./Game.jsx"; // Ensure this file exists
+import Game from "./game.jsx"; // Ensure this file exists
 import  Square  from "./assets/Square.png"; // Ensure this file exists
 
 function CharacterSel() {
@@ -33,3 +33,21 @@ function CharacterSel() {
 }
 
 export default CharacterSel;
+
+map.use(scale(4))
+
+const player = add ([
+    scale(4),
+    area({shape: new React(vec2(0), 32, 32), offset: vec2(0,32) }),
+    anchor("center"),
+    body(),
+    pos(900,10),
+    {speed: 500,
+        prevHeight: null,
+        heightDelta: 0,
+        direction: "right"
+    }
+])
+//player.play("idle-anim")
+
+

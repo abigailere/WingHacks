@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import "./App.css";
-import Game from "./Game.jsx"; // Ensure this file exists
+import Game from "./game.jsx"; // Ensure this file exists
 import CharacterSel from "./CharacterSel.jsx";
 
 function Home() {
