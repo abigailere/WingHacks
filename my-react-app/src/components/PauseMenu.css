@@ -1,0 +1,34 @@
+/* PauseMenu.css */
+.pause-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pause-menu h2 {
+    margin-bottom: 15px;
+}
+
+.pause-menu button {
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.pause-menu button:hover {
+    background: darkgreen;
+}
