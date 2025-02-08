@@ -1,0 +1,71 @@
+.character-screen {
+    background-image: url('./assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png');
+    background-size: cover;
+    /* Ensures the background covers the full screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Ensure it takes the full screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    image-rendering: pixelated;
+}
+
+.character-screen .div {
+    background-color: #fff;
+    height: 1024px;
+    position: relative;
+    width: 1440px;
+}
+
+.character-screen .size-48-P1 {
+    height: 707px !important;
+    left: 0 !important;
+    position: absolute !important;
+    top: 58px !important;
+    width: 773px !important; 
+}
+
+.character-screen .text-wrapper-P1 {
+    color: #000;
+    font-family: "Irish Grover-Regular", Helvetica;
+    font-size: 100px;
+    font-weight: 400;
+    left: 130px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    white-space: nowrap;
+    width: 479px;
+}
+
+.character-screen .size-48-P2 {
+    height: 707px !important;
+    left: 100 !important;
+    position: absolute !important;
+    top: 58px !important;
+    width: 773px !important; 
+}
+.character-screen .text-wrapper-P2 {
+    color: #000;
+    font-family: "Irish Grover-Regular", Helvetica;
+    font-size: 100px;
+    font-weight: 400;
+    left: 834px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 122px;
+    white-space: nowrap;
+    width: 479px;
+}
