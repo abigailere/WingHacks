@@ -25,7 +25,6 @@ function Home() {
   );
 }
 
-
 function App() {
   const location = useLocation(); 
   const isHome = location.pathname === "/"; 

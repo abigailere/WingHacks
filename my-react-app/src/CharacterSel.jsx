@@ -99,24 +99,3 @@ function CharacterSel() {
 }
 
 export default CharacterSel;
-<<<<<<< HEAD
-=======
-
-map.use(scale(4))
-
-const player = add ([
-    scale(4),
-    area({shape: new React(vec2(0), 32, 32), offset: vec2(0,32) }),
-    anchor("center"),
-    body(),
-    pos(900,10),
-    {speed: 500,
-        prevHeight: null,
-        heightDelta: 0,
-        direction: "right"
-    }
-])
-//player.play("idle-anim")
-
-
->>>>>>> 0fa819c5e95a3b7eed650b1615fb254c1e071daf
