@@ -37,6 +37,38 @@
   padding: 2em;
 }
 
+.buttonDesign{
+  border-radius: 8px;
+  border: 15px solid transparent;
+  padding: 0.6em 1.0em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
 .read-the-docs {
   color: #888;
+}
+
+.start-screen {
+  background-image: url('./assets/background/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png');
+  background-size: cover;
+  /* Ensures the background covers the full screen */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Ensure it takes the full screen */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  image-rendering: pixelated;
 }
