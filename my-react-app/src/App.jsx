@@ -7,7 +7,7 @@ import Game from "./Game.jsx"; // Ensure this file exists
 import CharacterSel from "./CharacterSel.jsx";
 import Pixi from "./PixisCanvas.jsx"; // Ensure this file exists
 import CreateScene from "./scenes/CreateScene.jsx";
-import TestKaboom from "./testKaboom.jsx";
+// import TestKaboom from "./testKaboom.jsx";
 //const CreateScene = require('./scenes/CreateScene.js')
 
 function Home() {
