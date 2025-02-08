@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from
 import "./App.css";
 import Game from "./Game.jsx"; // Ensure this file exists
 import CharacterSel from "./CharacterSel.jsx";
+import Pixi from "./PixisCanvas.jsx"; // Ensure this file exists
 
 function Home() {
   const navigate = useNavigate();

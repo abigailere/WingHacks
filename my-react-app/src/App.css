@@ -54,7 +54,7 @@
 }
 
 .start-screen {
-  background-image: url('./assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png');
+  background-image: url('./assets/background/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png');
   background-size: cover;
   /* Ensures the background covers the full screen */
   background-position: center;
