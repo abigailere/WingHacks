@@ -34,20 +34,20 @@ function CharacterSel() {
 
 export default CharacterSel;
 
-map.use(scale(4))
+// map.use(scale(4))
 
-const player = add ([
-    scale(4),
-    area({shape: new React(vec2(0), 32, 32), offset: vec2(0,32) }),
-    anchor("center"),
-    body(),
-    pos(900,10),
-    {speed: 500,
-        prevHeight: null,
-        heightDelta: 0,
-        direction: "right"
-    }
-])
+// const player = add ([
+//     scale(4),
+//     area({shape: new React(vec2(0), 32, 32), offset: vec2(0,32) }),
+//     anchor("center"),
+//     body(),
+//     pos(900,10),
+//     {speed: 500,
+//         prevHeight: null,
+//         heightDelta: 0,
+//         direction: "right"
+//     }
+// ])
 //player.play("idle-anim")
 
 
