@@ -228,3 +228,11 @@
         transition: border-color 0.25s;
         font-family: 'Irish Grover';
 }
+
+.hidden {
+    display: none;
+}
+
+.error-border {
+    border: 15px solid transparent red; /* Red border if selection is incomplete */
+}
