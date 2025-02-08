@@ -22,12 +22,10 @@ function Home() {
         Create Scene
       </button>
     </div>
-  );
+  )
 }
 
 function App() {
-  const location = useLocation(); 
-  const isHome = location.pathname === "/"; 
 
   return (
       <div className={isHome ? "start-screen" : ""}>
