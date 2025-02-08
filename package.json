@@ -1,6 +1,11 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^1.7.9",
     "pixi.js": "^8.7.3"
+=======
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+>>>>>>> 0fa819c5e95a3b7eed650b1615fb254c1e071daf
   }
 }

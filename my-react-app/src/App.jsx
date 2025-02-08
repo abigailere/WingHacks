@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from
 //import kaboom from "kaboom";
 //import kaboom from "https://unpkg.com/kaboom@3000.1.17/dist/kaboom.mjs";
 import "./App.css";
-import Game from "./Game.jsx"; // Ensure this file exists
+import Game from "./game.jsx"; // Ensure this file exists
 import CharacterSel from "./CharacterSel.jsx";
 import Pixi from "./PixisCanvas.jsx"; // Ensure this file exists
 import CreateScene from "./scenes/CreateScene.jsx";
