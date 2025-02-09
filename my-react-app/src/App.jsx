@@ -1,13 +1,9 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from "react-router-dom";
-//import kaboom from "kaboom";
-//import kaboom from "https://unpkg.com/kaboom@3000.1.17/dist/kaboom.mjs";
 import "./App.css";
-import Game from "./Game.jsx"; // Ensure this file exists
 import CharacterSel from "./CharacterSel.jsx";
-import CreateScene from "./scenes/CreateScene.jsx";
-import TestKaboom from "./testKaboom.jsx";
-//const CreateScene = require('./scenes/CreateScene.js')
+import Main from './main.jsx'
+import * as PIXI from 'pixi.js'
 
 function Home() {
   const navigate = useNavigate();
@@ -24,20 +20,20 @@ function Home() {
   );
 }
 
-
 function App() {
-  const location = useLocation(); 
-  const isHome = location.pathname === "/"; 
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   return (
+    <>
+      <Experience />
       <div className={isHome ? "start-screen" : ""}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/game" element={<Game />} />
-        <Route path="/character" element={<CharacterSel />} />
-        <Route path="/create" element={<CreateScene />} /> 
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/game" element={<Main />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
