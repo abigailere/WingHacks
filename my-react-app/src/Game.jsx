@@ -11,6 +11,12 @@ const Game = () => {
         window.location.reload();
     };
 
+    const [answer, setAnswer] = useState("");
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`Your answer: ${answer}`);
+    }
+
     return (
         <div className="game-container">
            
@@ -35,6 +41,12 @@ const Game = () => {
                             <img src={bottomtile} alt="Bottom Tile" />
                         </div>
 
+            <form onSubmit={handleSubmit}>
+                <div> Type your answer </div>
+                <input type="text" value={answer} onChange={(e)=> setAnswer(e.target.value)}/>
+                <input type="submit" />
+            </form>
+
             {/* Pause Menu */}
             <PauseMenu isPaused={isPaused} setIsPaused={setIsPaused} restartGame={restartGame} />
             
@@ -42,6 +54,8 @@ const Game = () => {
             <button className="pause-button" onClick={() => setIsPaused(true)}>
                 Pause
             </button>
+            
+
         </div>
     );
 };
