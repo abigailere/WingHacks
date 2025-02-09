@@ -1,39 +1,72 @@
-import { useEffect, useRef } from "react";
+// src/PixisCanvas.jsx
+import React, { useEffect, useRef, useState } from "react";
 import * as PIXI from "pixi.js";
 
-const PixiCanvas = () => {
-    const pixiContainer = useRef(null);
+// Import knight animation frames dynamically
+const knightFrames = import.meta.glob("./assets/characters/Knight_player_1.4/.png", { eager: true });
+
+function PixisCanvas() {
+    const canvasRef = useRef(null);
+    const appRef = useRef(null);
+    const [animationType, setAnimationType] = useState("idle"); // Default animation
 
     useEffect(() => {
-        const app = new PIXI.Application({
-            width: 800,
-            height: 600,
-            backgroundColor: 0x1099bb,
-        });
-
-        if (pixiContainer.current) {
-            pixiContainer.current.appendChild(app.view);
+        if (!appRef.current) {
+            const app = new PIXI.Application({
+                width: 800,
+                height: 600,
+                backgroundColor: 0x1099bb,
+            });
+            canvasRef.current.appendChild(app.view);
+            appRef.current = app;
         }
 
-        // Create a rotating sprite
-        const sprite = PIXI.Sprite.from("https://pixijs.com/assets/bunny.png");
-        sprite.anchor.set(0.5);
-        sprite.x = app.view.width / 2;
-        sprite.y = app.view.height / 2;
-        app.stage.addChild(sprite);
-
-        // Animation
-        app.ticker.add(() => {
-            sprite.rotation += 0.05;
-        });
-
-        // Cleanup
         return () => {
-            app.destroy(true, { children: true });
+            appRef.current.destroy(true);
+            appRef.current = null;
         };
     }, []);
 
-    return <div ref={pixiContainer} />;
-};
+    useEffect(() => {
+        if (!appRef.current) return;
 
-export default PixiCanvas;
+        const app = appRef.current;
+
+        // Load knight animation frames
+        const animations = {
+            idle: Object.values(knightFrames).filter((img) => img.default.includes("Crouching_Idle_KG")),
+            attack: Object.values(knightFrames).filter((img) => img.default.includes("Attack_KG")),
+            walk: Object.values(knightFrames).filter((img) => img.default.includes("Crouching_Walk_KG")),
+        };
+
+        const textures = animations[animationType].map((img) => PIXI.Texture.from(img.default));
+
+        // Create animated sprite
+        const knight = new PIXI.AnimatedSprite(textures);
+        knight.x = 400;
+        knight.y = 300;
+        knight.anchor.set(0.5);
+        knight.animationSpeed = 0.1;
+        knight.play();
+
+        app.stage.addChild(knight);
+
+        return () => {
+            app.stage.removeChild(knight);
+            knight.destroy();
+        };
+    }, [animationType]);
+
+    return (
+        <div>
+            <h1>Knight Animation</h1>
+            <button onClick={() => setAnimationType("attack")}>Attack</button>
+            <button onClick={() => setAnimationType("idle")}>Idle</button>
+            <button onClick={() => setAnimationType("walk")}>Walk</button>
+
+            <div ref={canvasRef}></div>
+        </div>
+    );
+}
+
+export default PixisCanvas;
