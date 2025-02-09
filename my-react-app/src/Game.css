@@ -1,15 +1,16 @@
 /* Game Container */
-/* html,
+html,
 body {
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
+    /* left: -100; */
     position: absolute;
-    overflow: hidden;
-} */
+    /* overflow: hidden; */
+}
 .game-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
@@ -20,6 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: cover;
 } 
 
 /* Game Screen */
@@ -28,9 +30,9 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: white;
-    /* display: flex; */
+    display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 .bottom-image1 {
     position: fixed;
@@ -132,9 +134,6 @@ body {
     image-rendering: pixelated;
 }
 
-
-
-
 /* Pause Button */
 .pause-button {
     position: absolute;
@@ -181,7 +180,6 @@ body {
     text-align: center;
 }
 
-/* Player 1: Cat */
 .char-P1-4-c {
     height: 1350px;
     left: 455px;
@@ -192,13 +190,13 @@ body {
     image-rendering: pixelated;
 }
 
-/* Player 2: Knight */
 .char-P2-3-c {
-    left: 855px;
+    left: 1500px;
     position: absolute;
     top: 570px;
     width: 900px;
     height: 150px;
     clip-path: inset(0px 600px 0px 0px);
-    /* object-fit: cover; */
+    object-fit: cover;
+    image-rendering: pixelated;
 }

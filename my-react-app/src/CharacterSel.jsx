@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CharacterSel.css";
-import Game from "./Game.jsx";
+// import Game from "./Game.jsx";
 import Square from "./assets/Square.png";
 import BlueWitch from "./assets/characters/Blue Witch/B_witch_idle.png";
 import BlueWizard from "./assets/characters/BlueWizard Animations/BlueWizard/2BlueWizardIdle/Chara - BlueIdle00000.png";
@@ -99,8 +99,3 @@ function CharacterSel() {
 }
 
 export default CharacterSel;
-
-
-
-
-
