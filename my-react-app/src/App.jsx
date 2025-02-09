@@ -18,9 +18,9 @@ function Home() {
       <button className="buttonDesign" onClick={() => navigate("/character")}>
         Start Game
       </button>
-      <button className="buttonScene" onClick={() => navigate("/create")}>
+      {/* <button className="buttonScene" onClick={() => navigate("/create")}>
         Create Scene
-      </button>
+      </button> */}
     </div>
   );
 }
