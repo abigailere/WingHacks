@@ -7,6 +7,8 @@ import Game from "./Game.jsx"; // Ensure this file exists
 import CharacterSel from "./CharacterSel.jsx";
 import Pixi from "./PixisCanvas.jsx"; // Ensure this file exists
 import CreateScene from "./scenes/CreateScene.jsx";
+import Player1Win from "./Player1Win.jsx"
+import Player2Win from "./Player2Win.jsx"
 // import TestKaboom from "./testKaboom.jsx";
 //const CreateScene = require('./scenes/CreateScene.js')
 
@@ -36,7 +38,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/game" element={<Game />} />
         <Route path="/character" element={<CharacterSel />} />
-        <Route path="/create" element={<CreateScene />} /> 
+        <Route path="/create" element={<Player2Win/>} /> 
       </Routes>
     </div>
   );
