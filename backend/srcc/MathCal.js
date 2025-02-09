@@ -45,40 +45,61 @@ function generateEquation() {
     return { equation: `${num1} ${operation} ${num2}`, answer: result };
 }
 
-// Store the current equation globally
-let currentEquation = generateEquation();
+// Function to handle a player's game session
+function playGame(playerName) {
+    return new Promise((resolve) => {
+        let count = 0;
+        let questionIndex = 0;
 
-function player1Equation() {
-    let count = 0;
-    let questionIndex = 0;
-    
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
+        const rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
 
-    function askQuestion() {
-        if (questionIndex < 10) {
-            const question = generateEquation();
-            console.log(`Q${questionIndex + 1}: ${question.equation} = ?`);
+        function askQuestion() {
+            if (questionIndex < 10) {
+                const question = generateEquation();
+                console.log(`${playerName} - Q${questionIndex + 1}: ${question.equation} = ?`);
 
-            rl.question("Your answer: ", (userInput) => {
-                const userAnswer = parseFloat(userInput);
+                rl.question("Your answer: ", (userInput) => {
+                    const userAnswer = parseFloat(userInput);
 
-                if (userAnswer === question.answer) {
-                    count++;
-                }
+                    if (userAnswer === question.answer) {
+                        count++;
+                    }
 
-                questionIndex++;
-                askQuestion(); // Ask the next question
-            });
-        } else {
-            console.log(`You got ${count} correct out of 10.`);
-            rl.close();
+                    questionIndex++;
+                    askQuestion(); // Ask the next question
+                });
+            } else {
+                console.log(`${playerName} got ${count} correct out of 10.`);
+                rl.close();
+                resolve(count); // Return the score
+            }
         }
-    }
 
-    askQuestion();
+        askQuestion();
+    });
+}
+
+// Function to start the game for both players
+async function startGame() {
+    console.log("Starting game...");
+    
+    const player1Score = await playGame("Player 1");
+    const player2Score = await playGame("Player 2");
+
+    console.log("\nGame Over!");
+    console.log(`Player 1 Score: ${player1Score}`);
+    console.log(`Player 2 Score: ${player2Score}`);
+
+    if (player1Score > player2Score) {
+        console.log("🏆 Player 1 Wins!");
+    } else if (player2Score > player1Score) {
+        console.log("🏆 Player 2 Wins!");
+    } else {
+        console.log("🤝 It's a Tie!");
+    }
 }
 
 // Start Express Server
@@ -87,17 +108,12 @@ app.get("/math", (req, res) => {
     res.json({ equation: currentEquation.equation });
 });
 
-app.post("/math/check", (req, res) => {
-    const userAnswer = parseFloat(req.body.answer);
-    const correct = userAnswer === currentEquation.answer;
-    res.json({ correct, correctAnswer: currentEquation.answer });
-});
 
 app.listen(5000, () => {
     console.log("Server running on port 5000 :)");
 
     // === RUN THE GAME IN TERMINAL IF "--play" ARGUMENT IS PROVIDED ===
     if (process.argv.includes("--play")) {
-        player1Equation();
+        startGame();
     }
 });
