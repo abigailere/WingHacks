@@ -5,7 +5,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: lightblue;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,18 +21,106 @@
     align-items: center;
     justify-content: space-between;
 }
-
-/* Player & Enemy (Temporary Squares) */
-.player, .enemy {
-    width: 50px;
-    height: 50px;
-    background-color: black;
+.bottom-image1 {
+    position: fixed;
+    left: 38%;
+    bottom: 0;
+   
+    width: 100vw;
+    height: 25vh;  
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
-/* Enemy */
-.enemy {
-    background-color: gray;
+
+.bottom-image1 img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
 }
+
+.bottom-image2 {
+    position: fixed;
+    right: 38%;
+    bottom: 0;
+   
+    width: 100vw;
+    height: 25vh;  
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+.bottom-image2 img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+.bottom-image3 {
+    position: fixed;
+    left: 20%;
+    bottom: 0;
+   
+    width: 100vw;
+    height: 25vh;  
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+.bottom-image3 img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+.bottom-image4 {
+    position: fixed;
+    right: 20%;
+    bottom: 0;
+   
+    width: 100vw;
+    height: 25vh;  
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+.bottom-image4 img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
+.bottom-image5 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+   
+    width: 100vw;
+    height: 25vh;  
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+.bottom-image5 img {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+}
+
 
 /* Pause Button */
 .pause-button {
