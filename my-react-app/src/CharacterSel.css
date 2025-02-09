@@ -6,7 +6,7 @@
 }
 
 .character-screen {
-    background-image: url('./assets/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png');
+    background-image: url('./assets/background/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png');
     background-size: cover;
     /* Ensures the background covers the full screen */
     background-position: center;
@@ -38,6 +38,30 @@
     position: absolute !important;
     top: 170px !important;
     width: 773px !important; 
+    image-rendering: pixelated;
+}
+
+.character-screen .char-P1-1-c {
+    width: 150px;
+    height: 707px;
+    position: absolute;
+    left: 185px;
+    top: 170px;
+    object-fit: cover;
+    clip-path: inset(110px 0px 350px 0px);
+    /* Adjust cropping to capture one witch */
+    image-rendering: pixelated;
+}
+
+.character-screen .char-P2-1-c {
+    width: 150px;
+    height: 707px;
+    position: absolute;
+    left: 895px;
+    top: 170px;
+    object-fit: cover;
+    clip-path: inset(110px 0px 350px 0px);
+    /* Adjust cropping to capture one witch */
     image-rendering: pixelated;
 }
 
@@ -103,12 +127,52 @@
     width: 300px;
 }
 
+.character-screen .char-P1-3-c {
+    left: 140px;
+    position: absolute;
+    top: 570px;
+    width: 900px;
+    height: 150px;
+    clip-path: inset(0px 600px 0px 0px);
+    /* object-fit: cover; */
+}
+
+.character-screen .char-P2-3-c {
+    left: 855px;
+    position: absolute;
+    top: 570px;
+    width: 900px;
+    height: 150px;
+    clip-path: inset(0px 600px 0px 0px);
+    /* object-fit: cover; */
+}
+
 .character-screen .char-P1-4 {
     height: 280px;
     left: 370px;
     position: absolute;
     top: 510px;
     width: 300px;
+}
+
+.character-screen .char-P1-4-c {
+    height: 1350px;
+    left: 455px;
+    position: absolute;
+    top: 565px;
+    width: 130px;
+    clip-path: inset(0px 0px 1200px 0px);
+    image-rendering: pixelated;
+}
+
+.character-screen .char-P2-4-c {
+    height: 1350px;
+    left: 1175px;
+    position: absolute;
+    top: 565px;
+    width: 130px;
+    clip-path: inset(0px 0px 1200px 0px);
+    image-rendering: pixelated;
 }
 
 .character-screen .char-P2-1 {
@@ -163,4 +227,12 @@
         cursor: pointer;
         transition: border-color 0.25s;
         font-family: 'Irish Grover';
+}
+
+.hidden {
+    display: none;
+}
+
+.error-border {
+    border: 15px solid transparent red; /* Red border if selection is incomplete */
 }

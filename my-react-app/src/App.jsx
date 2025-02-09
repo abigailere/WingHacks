@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from
 import "./App.css";
 import Game from "./game.jsx"; // Ensure this file exists
 import CharacterSel from "./CharacterSel.jsx";
+import Pixi from "./PixisCanvas.jsx"; // Ensure this file exists
 import CreateScene from "./scenes/CreateScene.jsx";
-import TestKaboom from "./testKaboom.jsx";
+// import TestKaboom from "./testKaboom.jsx";
 //const CreateScene = require('./scenes/CreateScene.js')
 
 function Home() {

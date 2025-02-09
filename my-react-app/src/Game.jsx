@@ -5,7 +5,6 @@ import "./Game.css";
 
 const Game = () => {
     const [isPaused, setIsPaused] = useState(false);
-    const navigate = useNavigate();
 
     const restartGame = () => {
         window.location.reload();
