@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // Import navigation
 import PauseMenu from "./components/PauseMenu";
 import bottomtile from "./assets/background/kenney_pixel-platformer/Tiles/tile_0002.png";
 import "./Game.css";
@@ -13,12 +14,13 @@ const Game = () => {
     const [gameOver, setGameOver] = useState(false);
     const [winner, setWinner] = useState("");
 
+    const navigate = useNavigate(); // React Router navigation
+
     // Fetch the math equation and player turn from the backend
     const fetchEquation = () => {
         fetch("http://localhost:5000/math")
             .then(res => res.json())
             .then(data => {
-                console.log("Fetched data:", data); // Debugging log
                 if (data.gameOver) {
                     setGameOver(true);
                     setScores(data.scores);
@@ -35,10 +37,6 @@ const Game = () => {
     useEffect(() => {
         fetchEquation();
     }, []);
-
-    const restartGame = () => {
-        window.location.reload();
-    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -66,7 +64,7 @@ const Game = () => {
                 );
             } else {
                 setPlayerTurn(result.playerTurn);
-                setEquation("Loading..."); // Prevent old equation from flashing
+                setEquation("Loading..."); // Prevent old equation flash
                 fetchEquation(); // Fetch the new equation
             }
         } catch (error) {
@@ -89,32 +87,28 @@ const Game = () => {
                     <p>Player 1 Score: {scores[1]}</p>
                     <p>Player 2 Score: {scores[2]}</p>
                     <h2>{winner === "Tie" ? "🤝 It's a Tie!" : `🏆 ${winner} Wins!`}</h2>
-                    <button onClick={restartGame}>Restart Game</button>
+                    <button onClick={() => navigate("/")}>Start Screen</button> {/* Navigate to Start */}
                 </div>
             ) : (
                 <div>
-                    <h2>Player {playerTurn}'s Turn</h2>
-                    <h3>Solve: {equation}</h3>
+                    <h2 className="playerTurn-Text">Player {playerTurn}'s Turn</h2>
+                    <h3 className="equation-Text">Solve: {equation}</h3>
 
                     <form onSubmit={handleSubmit}>
-                        <div>Type your answer</div>
                         <input
+                            className="answer-input"
                             type="text"
                             value={answer}
                             onChange={(e) => setAnswer(e.target.value)}
-                            placeholder="Enter your answer"
+                            placeholder="Enter"
                         />
                         <button type="submit">Submit</button>
                     </form>
 
                     {feedback && <p>{feedback}</p>}
 
-                    <h4>Scores</h4>
-                    <p>Player 1: {scores[1]}</p>
-                    <p>Player 2: {scores[2]}</p>
-
                     {/* Pause Menu */}
-                    <PauseMenu isPaused={isPaused} setIsPaused={setIsPaused} restartGame={restartGame} />
+                    <PauseMenu isPaused={isPaused} setIsPaused={setIsPaused} restartGame={() => navigate("/")} />
 
                     {/* Pause Button */}
                     <button className="pause-button" onClick={() => setIsPaused(true)}>Pause</button>
