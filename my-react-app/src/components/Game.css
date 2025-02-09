@@ -1,0 +1,44 @@
+.game-container {
+    position: relative;
+    text-align: center;
+}
+  
+/* Pause Button */
+.pause-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+  
+/* Pause Menu */
+.pause-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+  
+.pause-menu h2 {
+    margin-bottom: 15px;
+}
+  
+.pause-menu button {
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+  

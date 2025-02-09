@@ -38,8 +38,9 @@ function attacking(player1, player2) {
 
 //
 
-const player1 = new Player("Nora", 100, 15);
+/*const player1 = new Player("Nora", 100, 15);
 const player2 = new Player("Enemy", 100, 15);
 attacking(player1, player2);  
 attacking(player2, player1);  
 attacking(player1, player2);
+*/
