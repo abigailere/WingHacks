@@ -181,3 +181,24 @@ body {
     text-align: center;
 }
 
+/* Player 1: Cat */
+.char-P1-4-c {
+    height: 1350px;
+    left: 455px;
+    position: absolute;
+    top: 565px;
+    width: 130px;
+    clip-path: inset(0px 0px 1200px 0px);
+    image-rendering: pixelated;
+}
+
+/* Player 2: Knight */
+.char-P2-3-c {
+    left: 855px;
+    position: absolute;
+    top: 570px;
+    width: 900px;
+    height: 150px;
+    clip-path: inset(0px 600px 0px 0px);
+    /* object-fit: cover; */
+}
